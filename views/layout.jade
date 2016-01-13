@@ -1,0 +1,103 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="description" content="A free template from http://ws-templates.com")
+        meta(name="keywords" content="keyword1,keyword2")
+        link(rel='stylesheet', media="screen", href='css/screen.css')
+        link(rel='stylesheet', media="screen", href='css/style.css')
+        script(type="text/javascript" src="js/jquery.js")
+        script(type="text/javascript" src="js/jquery.balloon.js")
+        script.
+            $(document).ready(function () {
+                $('#frm_contact').submit(function(event){
+                    event.preventDefault();
+                    $.post( "/message", $( "#frm_contact" ).serialize(), function(result){
+                        if(result && result.error && result.error.errors){
+                            var e = result.error.errors;
+                            for(var f in e){
+                                $('#frm_contact input[name=' + f + ']').showBalloon({ position: 'bottom left', contents:e.name.message });
+                                $('#frm_contact input[name=' + f + ']').keydown(function(){
+                                    $('#frm_contact input[name=' + f + ']').hideBalloon();
+                                });
+                            }
+                        }
+                    }, 'json');
+                });
+            });
+        block head
+body
+    div(id="header_wrapper")
+        header(class="container")
+            h1(class="span-6") TEste
+            img(src="img/bluedream-ps_03.jpg" class="left" style="padding-top: 5px;"  alt="")
+            nav(class="span-17 last right")
+                ul(class="right")
+                    li(class="active")
+                        a(class="p_text_color" href="index.html") O Rancho
+                    li
+                        a(class="p_text_color" href="index.html") Igarapé
+                    li
+                        a(class="p_text_color" href="index.html") Serviços
+                    li
+                        a(class="p_text_color" href="index.html") Reservas
+                    li
+                        a(class="p_text_color" href="index.html") Localização
+                    li
+                        a(class="p_text_color" href="index.html") Fale Conosco
+
+    block content
+
+    footer(class="clearfix")
+        div(class="container")
+            div(class="about span-6")
+                h3 O rancho cinco estrelas
+                hr
+                p At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet orem ipsum dolor sit amet, consetetur sadipscing eli
+
+            div(id="tweets" class="span-6")
+                h3 Últimas notícias
+                hr
+                div(class="one_tweet")
+                    p sit amet orem ipsum dolor sit amet, consetetur sadipscing
+                    a(href="#") http://t.co/#####
+                    div(class="date") 03 March 2013
+
+                div(class="one_tweet")
+                    p sit amet orem ipsum dolor sit amet
+                    a(href="#") http://t.co/#####
+                    div(class="date") 03 March 2013
+
+            div(id="newsletter" class="span-6")
+                h3 Fique informado
+                hr
+                p Puerta vset del amet puido cerar una uerta set del amet puido cerar una puertaset del amet puido
+                form(id="frm_newsletter" action="#" class="clearfix")
+                    div(class="newsletter_textfield_wrapper")
+                        input(type="text" name="email" placeholder="Digite seu email" width="70%" class="left")
+                        input(type="submit" value="ok" width="30%" class="right")
+
+                div(class="social_icons") Siga-nos no: 
+                    a(href="")
+                        img(src="img/tweeter.png" alt="")
+                    a(href="")
+                        img(src="img/facebook.png" alt="")
+                    a(href="")
+                        img(src="img/gplus.png" alt="")
+
+            div(id="footer_form" class="span-6 last clearfix")
+                h3 Entre em contato
+                hr
+                form(id="frm_contact" action="#")
+                    div(class="row")
+                        input(type="text" name="name" placeholder="Diga-nos seu nome" class="span-6 last")
+                    div(class="row")
+                        input(type="text" name="email" placeholder="e o seu email para contato" class="span-6 last")
+                    div(class="row")
+                        textarea(name="message"  placeholder="o que você gostaria de dizer?" class="span-6 last")
+                    input(type="submit" value="enviar" class="left")
+            hr
+            div(class="copyright_info")
+                span(class="left" style="width:500px;") <b>Endereço: <b/> Rua da Pedreira, 180 Cardeal Mota / Serra do Cipó Santana do Riacho - MG <br/> Telefone: 234234234 <br/> Email: asdaasdasd@ada.com.br
+                span(class="right last") Copyright 2016 by <b> Rancho Cinco Estrelas, all rights reserved <b/>
+    block footer
