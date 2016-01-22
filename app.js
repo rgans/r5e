@@ -27,7 +27,8 @@ app.use(session({secret:'r5egso0536', saveUninitialized:false, resave:false, sto
 [
     { path: '/', controller: require('./routes/index') },
     { path: '/newsletter', controller: require('./routes/newsletter') },
-    { path: '/message', controller: require('./routes/message') }
+    { path: '/message', controller: require('./routes/message') },
+    { path: '/about', controller: require('./routes/about') }
 ].forEach(function(r){
     app.use(r.path, r.controller);
 });
