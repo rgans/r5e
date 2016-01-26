@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="description" content="A free template from http://ws-templates.com")
+        meta(name="keywords" content="keyword1,keyword2")
+        link(rel='stylesheet', media="screen", href='/css/screen.css')
+        link(rel='stylesheet', media="screen", href='/css/style.css')
+        script(type="text/javascript" src="/js/jquery.js")
+        script(type="text/javascript" src="/js/jquery.balloon.js")
+        script.
+            $(document).ready(function () {
+                $('#frm_contact').submit(function(event){
+                    event.preventDefault();
+                    $.post( "/message", $( "#frm_contact" ).serialize(), function(result){
+                        if(result && result.error && result.error.errors){
+                            var e = result.error.errors;
+                            for(var f in e){
+                                $('#frm_contact input[name=' + f + ']').showBalloon({ position: 'bottom left', contents:e.name.message });
+                                $('#frm_contact input[name=' + f + ']').keydown(function(){
+                                    $('#frm_contact input[name=' + f + ']').hideBalloon();
+                                });
+                            }
+                        }
+                    }, 'json');
+                });
+            });
+        block head
+body
+    div(id="header_wrapper")
+        header(class="container")
+            h1(class="span-6") ADMIN
+            img(src="img/bluedream-ps_03.jpg" class="left" style="padding-top: 5px;"  alt="")
+            nav(class="span-17 last right")
+                ul(class="right")
+                    li(class="active")
+                        a(class="p_text_color" href="/about") Mensagens
+                    li
+                        a(class="p_text_color" href="/about/igarape") Newsletter
+                    li
+                        a(class="p_text_color" href="index.html") Notícias
+
+    block content
+
+    footer(class="clearfix")
+        div(class="container")
+    block footer

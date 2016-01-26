@@ -1,18 +1,15 @@
-extends ../layout
+extends layout
 
 block head
 
 block content
     div(class="container")
-        h2 Saiba mais sobre o Rancho Cinco Estrelas
+        h2 Informe suas credenciais para acessar a area administrativa
         hr
         div(class="box")
-            | Situado ao pé da serra Pedra Grande (Pico do Itatiaiuçu) em Igarapé – MG, clima tropical de 
-            | altitude e vegetação predominantemente de cerrado e relevo montanhoso. Ótima trilha para a 
-            | prática de mountain bike, trekking e motocross ou simplesmente curtir alguns dias junto à 
-            | natureza. O Rancho 5 estrelas possui infraestrutura com estacionamento próprio, chalés 
-            | confortáveis, piscina, sauna, área de jogos e um deliciosa café da manha rodeado da natureza.
-            br
-            br
-            | Localizada a apenas 35 Km de Belo Horizonte, 25 Km de Betim e apenas 17 Km de Inhotim.
-            | Local ideal para uma fuga do stress das grandes cidades.
+            form(id="frm_login" action="#")
+                div(class="row")
+                    input(type="text" name="username" placeholder="Usuario ou Email" class="span-6 last")
+                div(class="row")
+                    input(type="password" name="password" placeholder="Senha" class="span-6 last")
+                input(type="submit" value="enviar" class="left")

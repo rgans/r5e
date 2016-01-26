@@ -6,7 +6,7 @@ var User = repository.User;
 var authorize = require(config.path.security.authorize);
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', authorize, function(req, res, next) {
   res.render('admin/index', { title: 'Express' });
 });
 
