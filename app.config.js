@@ -16,11 +16,16 @@ var config = {
             r5e: path.join(__dirname, 'database/r5e/repository')
         },
         
+        security: {
+            authorize: path.join(__dirname, 'security/authorize')
+        },
+        
         entity: {
             r5e: {
                 contact: path.join(__dirname, 'database/r5e/contact_entity'),
                 message: path.join(__dirname, 'database/r5e/message_entity'),
-                message_report: path.join(__dirname, 'database/r5e/message_report_entity')
+                message_report: path.join(__dirname, 'database/r5e/message_report_entity'),
+                user: path.join(__dirname, 'database/r5e/user_entity')
             }
         },
         

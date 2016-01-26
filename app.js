@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo/es5')(session);
+var User = require('./security/user');
 
 var app = express();
 
@@ -23,9 +24,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret:'r5egso0536', saveUninitialized:false, resave:false, store: new MongoStore({ url: 'mongodb://localhost/r5e' })}));
 
+app.use(function loadUser(req, res, next) {
+  req.session.user = req.session.user || new User();
+  req.user = app.locals.user = req.session.user;
+  console.log(req.user);
+  next();
+});
+
 //register routes
 [
     { path: '/', controller: require('./routes/index') },
+    { path: '/admin', controller: require('./routes/admin') },
     { path: '/newsletter', controller: require('./routes/newsletter') },
     { path: '/message', controller: require('./routes/message') },
     { path: '/about', controller: require('./routes/about') }

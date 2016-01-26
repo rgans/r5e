@@ -28,9 +28,11 @@ process.on('SIGINT', function () {
 var contactSchema = require(config.path.entity.r5e.contact);
 var messageSchema = require(config.path.entity.r5e.message);
 var messageReportSchema = require(config.path.entity.r5e.message_report);
+var userSchema = require(config.path.entity.r5e.user);
 
 module.exports = {
     Contact: mongoose.model(contactSchema.collection_name),
     Message: mongoose.model(messageSchema.collection_name),
     MessageReport: mongoose.model(messageReportSchema.collection_name),
+    User: mongoose.model(userSchema.collection_name),
 };
