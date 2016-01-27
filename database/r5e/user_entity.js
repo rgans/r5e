@@ -7,8 +7,7 @@ var schema = mongoose.Schema;
 var userSchema = new schema({
     name: {type: String, required: true},
     password: {type: String, required: true},
-    status: {type: String, required: true, enum:['']},
-    activation_date: {type: Date},
+    status: {type: String, required: true, enum:['Active', 'Inactive', 'Removed']},
 //    permission: [{type: mongoose.Schema.ObjectId, ref: permissionSchema.collection_name}],
 //    role: [{type: mongoose.Schema.ObjectId, ref: roleSchema.collection_name}]
 });

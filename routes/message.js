@@ -5,11 +5,11 @@ var config = require('../app.config');
 var repository = require(config.path.repository.r5e);
 var Message = repository.Message;
 var MessageReport = repository.MessageReport;
+var Contact = repository.Contact;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    var contact = repository.Contact;
-    contact.find({}, function(err, result){
+    Contact.find({}, function(err, result){
         
         if(err) console.log(err);
         else console.log(result);

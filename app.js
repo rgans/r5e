@@ -35,6 +35,11 @@ app.use(function loadUser(req, res, next) {
 [
     { path: '/', controller: require('./routes/index') },
     { path: '/admin', controller: require('./routes/admin') },
+    { path: '/service', controller: require('./routes/service') },
+    { path: '/reservation', controller: require('./routes/reservation') },
+    { path: '/event', controller: require('./routes/event') },
+    { path: '/gallery', controller: require('./routes/gallery') },
+    { path: '/location', controller: require('./routes/location') },
     { path: '/newsletter', controller: require('./routes/newsletter') },
     { path: '/message', controller: require('./routes/message') },
     { path: '/about', controller: require('./routes/about') }

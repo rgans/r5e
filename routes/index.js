@@ -6,7 +6,7 @@ var Message = repository.Message;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Bem vindo ao Rancho Cinco Estrelas' });
 });
 
 module.exports = router;

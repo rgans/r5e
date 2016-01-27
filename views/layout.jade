@@ -2,11 +2,15 @@ doctype html
 html
     head
         title= title
-        meta(name="description" content="A free template from http://ws-templates.com")
-        meta(name="keywords" content="keyword1,keyword2")
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="application-name" content="Website do Rancho Cinco Estrelas")
+        meta(name="application-url" content="http://www.ranchocincoestrelas.com.br")
+        meta(name="description" content="Pousada Rancho Cinco Estrelas")
+        meta(name="keywords" content="pousada,rancho,igarape,hotel,fazenda,piscina,churrasco,sauna,festa")
         link(rel='stylesheet', media="screen", href='/css/screen.css')
         link(rel='stylesheet', media="screen", href='/css/style.css')
-        script(type="text/javascript" src="/js/jquery.js")
+        script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
         script(type="text/javascript" src="/js/jquery.balloon.js")
         script.
             $(document).ready(function () {
@@ -38,13 +42,17 @@ body
                     li
                         a(class="p_text_color" href="/about/igarape") Igarapé
                     li
-                        a(class="p_text_color" href="index.html") Serviços
+                        a(class="p_text_color" href="/service") Serviços
                     li
-                        a(class="p_text_color" href="index.html") Reservas
+                        a(class="p_text_color" href="/reservation") Reservas
                     li
-                        a(class="p_text_color" href="index.html") Localização
+                        a(class="p_text_color" href="/event") Eventos
                     li
-                        a(class="p_text_color" href="index.html") Fale Conosco
+                        a(class="p_text_color" href="/gallery") Fotos
+                    li
+                        a(class="p_text_color" href="/location") Localização
+                    li
+                        a(class="p_text_color" href="/message") Fale Conosco
 
     block content
 
@@ -78,11 +86,11 @@ body
                         input(type="submit" value="ok" width="30%" class="right")
 
                 div(class="social_icons") Siga-nos no: 
-                    a(href="")
+                    a(href="https://twitter.com/rancho5estrelas" target="_blank")
                         img(src="img/tweeter.png" alt="")
-                    a(href="")
+                    a(href="http://www.facebook.com/ranchocincoestrelas" target="_blank")
                         img(src="img/facebook.png" alt="")
-                    a(href="")
+                    a(href="" target="_blank")
                         img(src="img/gplus.png" alt="")
 
             div(id="footer_form" class="span-6 last clearfix")
@@ -98,6 +106,6 @@ body
                     input(type="submit" value="enviar" class="left")
             hr
             div(class="copyright_info")
-                span(class="left" style="width:500px;") <b>Endereço: <b/> Rua da Pedreira, 180 Cardeal Mota / Serra do Cipó Santana do Riacho - MG <br/> Telefone: 234234234 <br/> Email: asdaasdasd@ada.com.br
+                span(class="left" style="width:500px;") <b>Endereço: <b/> Rua dos Tico-Ticos, 161 Vivendas Santa Mônica / Igarapé - MG <br/> Telefone: 234234234 <br/> Email: r5e.igarape@gmail.com
                 span(class="right last") Copyright 2016 by <b> Rancho Cinco Estrelas, all rights reserved <b/>
     block footer

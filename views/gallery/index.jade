@@ -1,0 +1,33 @@
+extends ../layout
+
+block head
+    link(rel='stylesheet', media="screen", href='/css/jcarousel.css')
+    script(type="text/javascript" src="/js/jquery.jcarousel.js")
+    script(type="text/javascript" src="/js/jcarousel.js")
+
+block content
+    div(class="container")
+        h2 Veja algumas fotos do rancho
+        hr
+        div(class="connected-carousels")
+            div(class="stage")
+                div(class="carousel carousel-stage")
+                    ul
+                        each val, index in picture
+                            li
+                                img(src=val.path alt=val.alt)
+                                div(class="photo-credits")= val.title
+
+                a(href="#" class="prev prev-stage")
+                    span &lsaquo;
+                a(href="#" class="next next-stage")
+                    span &rsaquo;
+
+            div(class="navigation")
+                a(href="#" class="prev prev-navigation") &lsaquo;
+                a(href="#" class="next next-navigation") &rsaquo;
+                div(class="carousel carousel-navigation")
+                    ul
+                        each val, index in picture
+                            li
+                                img(src=val.path alt=val.alt)

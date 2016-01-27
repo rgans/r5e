@@ -17,7 +17,8 @@ var config = {
         },
         
         security: {
-            authorize: path.join(__dirname, 'security/authorize')
+            authorize: path.join(__dirname, 'security/authorize'),
+            usermanager: path.join(__dirname, 'security/user_manager')
         },
         
         entity: {
