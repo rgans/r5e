@@ -42,7 +42,8 @@ app.use(function loadUser(req, res, next) {
     { path: '/location', controller: require('./routes/location') },
     { path: '/newsletter', controller: require('./routes/newsletter') },
     { path: '/message', controller: require('./routes/message') },
-    { path: '/about', controller: require('./routes/about') }
+    { path: '/about', controller: require('./routes/about') },
+    { path: '/news', controller: require('./routes/news') }
 ].forEach(function(r){
     app.use(r.path, r.controller);
 });

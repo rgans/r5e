@@ -9,13 +9,7 @@ var Contact = repository.Contact;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    Contact.find({}, function(err, result){
-        
-        if(err) console.log(err);
-        else console.log(result);
-        
-        res.json(result);
-    });
+  res.render('message/index', { title: 'Entre em contato conosco' });
 });
 
 router.post('/', function(req, res, next) {

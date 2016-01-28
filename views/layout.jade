@@ -33,14 +33,9 @@ html
 body
     div(id="header_wrapper")
         header(class="container")
-            h1(class="span-6") TEste
-            img(src="img/bluedream-ps_03.jpg" class="left" style="padding-top: 5px;"  alt="")
-            nav(class="span-17 last right")
+            img(src="img/logo.png" class="span-3 first left"  alt="")
+            nav(class="span-18 last right")
                 ul(class="right")
-                    li(class="active")
-                        a(class="p_text_color" href="/about") O Rancho
-                    li
-                        a(class="p_text_color" href="/about/igarape") Igarapé
                     li
                         a(class="p_text_color" href="/service") Serviços
                     li
@@ -59,12 +54,16 @@ body
     footer(class="clearfix")
         div(class="container")
             div(class="about span-6")
-                h3 O rancho cinco estrelas
+                h3
+                    a(href="/about") Saiba mais sobre o rancho
                 hr
-                p At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet orem ipsum dolor sit amet, consetetur sadipscing eli
+                p Localizada a apenas 35 Km de Belo Horizonte, 25 Km de Betim e apenas 17 Km de Inhotim.
+                    | Situado ao pé da serra Pedra Grande (Pico do Itatiaiuçu) em Igarapé – MG <br/>
+                    | Local ideal para uma fuga do stress das grandes cidades.
 
             div(id="tweets" class="span-6")
-                h3 Últimas notícias
+                h3
+                    a(href="/news") Últimas notícias
                 hr
                 div(class="one_tweet")
                     p sit amet orem ipsum dolor sit amet, consetetur sadipscing
@@ -77,12 +76,13 @@ body
                     div(class="date") 03 March 2013
 
             div(id="newsletter" class="span-6")
-                h3 Fique informado
+                h3
+                    a(href="/message") Fique informado
                 hr
-                p Puerta vset del amet puido cerar una uerta set del amet puido cerar una puertaset del amet puido
+                p Quer ficar por dentro das últimas novidades, promoções e eventos que acontecem no rancho? Assine nosso newsletter.
                 form(id="frm_newsletter" action="#" class="clearfix")
                     div(class="newsletter_textfield_wrapper")
-                        input(type="text" name="email" placeholder="Digite seu email" width="70%" class="left")
+                        input(type="text" name="email" placeholder="Digite seu email" class="span-2 eft")
                         input(type="submit" value="ok" width="30%" class="right")
 
                 div(class="social_icons") Siga-nos no: 
@@ -94,7 +94,8 @@ body
                         img(src="img/gplus.png" alt="")
 
             div(id="footer_form" class="span-6 last clearfix")
-                h3 Entre em contato
+                h3
+                    a(href="/message") Entre em contato
                 hr
                 form(id="frm_contact" action="#")
                     div(class="row")
@@ -103,7 +104,8 @@ body
                         input(type="text" name="email" placeholder="e o seu email para contato" class="span-6 last")
                     div(class="row")
                         textarea(name="message"  placeholder="o que você gostaria de dizer?" class="span-6 last")
-                    input(type="submit" value="enviar" class="left")
+                    div(class="row")
+                        input(type="submit" value="enviar" class="span-6")
             hr
             div(class="copyright_info")
                 span(class="left" style="width:500px;") <b>Endereço: <b/> Rua dos Tico-Ticos, 161 Vivendas Santa Mônica / Igarapé - MG <br/> Telefone: 234234234 <br/> Email: r5e.igarape@gmail.com
