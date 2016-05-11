@@ -1,0 +1,25 @@
+{
+  "name": "R5E",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "connect-mongo": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "*",
+    "jade": "*",
+    "kerberos": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mongoose-validators": "*",
+    "morgan": "*",
+    "request": "*",
+    "serve-favicon": "*",
+    "emailjs":"*"
+  }
+}

@@ -1,0 +1,32 @@
+extends ../layout
+
+block head
+
+block content
+  div(class="container")
+      h2(class="prepend-top") Entre em contato conosco
+      hr
+      div(class="box")
+        div(class="container")
+          div(id="contact_inf_box" class="span-8 right")
+            h4 Outras formas de contato
+            ul
+              li Telefone: 31430948403
+              li Email: r5e.igarape@gmail.com
+          h5(class="append-bottom") Esclareça suas dúvidas, envie sugestões e críticas
+          form(id="frm_contact" action="/message" method="post")
+              div(class="row")
+                  input(type="text" name="name" placeholder="Qual seu nome?" class="span-16 last")
+              div(class="row")
+                  input(type="text" name="email" placeholder="Informe seu email" class="span-16 last")
+              div(class="row")
+                  select(name="type" class="span-16 last")
+                      option Qual o tipo de mensagem você quer enviar?
+                      option(value="0") Dúvida
+                      option(value="1") Sugestão
+                      option(value="2") Reclamação
+                      option(value="3") Outro
+              div(class="row")
+                  textarea(name="message"  placeholder="Qual a sua mensagem?" class="span-16 last")
+              div(class="row")
+                  input(type="submit" value="enviar mensagem" class="span-16 last")
