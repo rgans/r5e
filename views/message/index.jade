@@ -30,3 +30,25 @@ block content
                   textarea(name="message"  placeholder="Qual a sua mensagem?" class="span-16 last")
               div(class="row")
                   input(type="submit" value="enviar mensagem" class="span-16 last")
+    div(class="container")
+        h2 Entre em contato conosco
+        hr
+        div(class="box")
+            | Esclareça suas dúvidas, envie sugestões e críticas
+            p
+                form(id="frm_contact" action="/message" method="post")
+                    div(class="row")
+                        input(type="text" name="name" placeholder="Diga-nos seu nome" class="span-6 last")
+                    div(class="row")
+                        input(type="text" name="email" placeholder="e o seu email para contato" class="span-6 last")
+                    div(class="row")
+                        select(name="type")
+                            option(value="") Qual a categoria da mensagem?
+                            option(value="0") Dúvida
+                            option(value="1") Sugestão
+                            option(value="2") Reclamação
+                            option(value="3") Outro
+                    div(class="row")
+                        textarea(name="message"  placeholder="o que você gostaria de dizer?" class="span-6 last")
+                    div(class="row")
+                        input(type="submit" value="enviar" class="left")

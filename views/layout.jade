@@ -98,6 +98,65 @@ body
                     a(href="/message") Entre em contato
                 hr
                 form(id="frm_contact" action="/message" method="post")
+            a(href="/")
+                img(src="img/logo.png" class="span-3 first left"  alt="")
+            nav(class="span-18 last right")
+                ul(class="right")
+                    li
+                        a(class="p_text_color" href="/about") A pousada
+                    li
+                        a(class="p_text_color" href="/gallery") Fotos
+                    li
+                        a(class="p_text_color" href="/service") Serviços
+                    li
+                        a(class="p_text_color" href="/reservation") Tarifas
+                    li
+                        a(class="p_text_color" href="/location") Localização
+                    li
+                        a(class="p_text_color" href="/message") Fale Conosco
+
+    block content
+
+    footer(class="clearfix")
+        div(class="container")
+            div(class="about span-6")
+                h3
+                    a(href="#") Eventos
+                hr
+                p Aguarde para mais informações sobre eventos e promoções.
+
+            div(id="tweets" class="span-6")
+                h3
+                    a(href="/news") Últimas notícias
+                hr
+                div(class="one_tweet")
+                    p Preço especial para maio.
+                    a(href="https://www.facebook.com/ranchocincoestrelas/posts/985649818169954") 10% de desconto
+                    div(class="date") 10 Maio 2016
+
+            div(id="newsletter" class="span-6")
+                h3
+                    a(href="/message") Fique informado
+                hr
+                p Quer ficar por dentro das últimas novidades, promoções e eventos que acontecem no rancho? Assine nosso newsletter.
+                form(id="frm_newsletter" action="#" class="clearfix")
+                    div(class="newsletter_textfield_wrapper")
+                        input(type="text" name="email" placeholder="Digite seu email" class="span-2 eft")
+                        input(type="submit" value="ok" width="30%" class="right")
+
+                div(class="social_icons") Siga-nos no: 
+                    a(href="https://twitter.com/rancho5estrelas" target="_blank")
+                        img(src="img/tweeter.png" alt="")
+                    a(href="http://www.facebook.com/ranchocincoestrelas" target="_blank")
+                        img(src="img/facebook.png" alt="")
+                    a(href="" target="_blank")
+                        img(src="img/gplus.png" alt="")
+
+            div(id="footer_form" class="span-6 last clearfix")
+                h3
+                    a(href="/message") Entre em contato
+                hr
+                form(id="frm_contact" action="#")
                     div(class="row")
                         input(type="text" name="name" placeholder="Diga-nos seu nome" class="span-6 last")
                     div(class="row")
