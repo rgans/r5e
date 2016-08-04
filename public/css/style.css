@@ -86,7 +86,7 @@ nav ul li a:hover{color: #fff}
     text-align: center;
 }
 .one_parag .icon_h2_wrapper{
-	width: 150px;
+	width: 180px;
 	height: 126px;
 	padding-top: 20px;
 	background-color: #7dbd21;
@@ -221,3 +221,30 @@ footer .copyright_info{
 }
 
 /*##########################################################*/
+
+h2.title { padding-top: 20px; }
+
+#form .row { padding: 5px 0px; }
+
+#form input,#form textarea, #form select {
+	border: none;
+	border-radius: 4px;
+	margin-bottom: 5px;
+        font-size: 14px;
+        background-color: white;
+}
+
+#form input,#form select{ height: 40px; }
+#form textarea{ height: 120px; }
+
+#form form input[type="submit"]{
+	padding: 10px 20px;
+	background-color: #c4ea8c;
+	color: #ffffff;
+	font-size: 12px;
+	border-radius: 0px;
+	display: block;
+	cursor: pointer;
+	font-style: italic; 
+	color: #000;
+}

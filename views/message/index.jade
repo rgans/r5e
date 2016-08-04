@@ -4,24 +4,44 @@ block head
 
 block content
     div(class="container")
-        h2 Entre em contato conosco
+        h2(class="title") Entre em contato conosco
         hr
-        div(class="box")
-            | Esclareça suas dúvidas, envie sugestões e críticas
-            p
-                form(id="frm_contact" action="/message" method="post")
-                    div(class="row")
-                        input(type="text" name="name" placeholder="Diga-nos seu nome" class="span-6 last")
-                    div(class="row")
-                        input(type="text" name="email" placeholder="e o seu email para contato" class="span-6 last")
-                    div(class="row")
-                        select(name="type")
-                            option(value="") Qual a categoria da mensagem?
-                            option(value="0") Dúvida
-                            option(value="1") Sugestão
-                            option(value="2") Reclamação
-                            option(value="3") Outro
-                    div(class="row")
-                        textarea(name="message"  placeholder="o que você gostaria de dizer?" class="span-6 last")
-                    div(class="row")
-                        input(type="submit" value="enviar" class="left")
+        div(id="form" class="box")
+            | Esclareça suas dúvidas, envie sugestões e críticas ou faça uma reserva.
+            form(id="frm_contact" action="/message" method="post")
+                div(class="row")
+                    input(type="text" name="name" placeholder="diga-nos seu nome" class="span-23 last")
+                div(class="row")
+                    input(type="text" name="email" placeholder="e o seu email para contato" class="span-23 last")
+                div(class="row")
+                    select(name="type")
+                        option(value="") Qual a categoria da mensagem?
+                        option(value="Reservation") Reserva
+                        option(value="Doubt") Dúvida
+                        option(value="Suggestion") Sugestão
+                        option(value="Complaint") Reclamação
+                        option(value="Other") Outro
+                div(class="row")
+                    textarea(name="message" placeholder="o que você gostaria de dizer?" class="span-23 last")
+                div(class="row")
+                    input(type="submit" value="enviar" rows="10" class="span-6 left")
+            br
+            br
+            br
+            | Outras formas para contato:
+            ul
+                li
+                    b Telefone: 
+                    | (31) 98239-4079
+                li
+                    b Email: 
+                    a(href="mailto:r5e.igarape@gmail.com?Subject=Contato R5E" target="_top") r5e.igarape@gmail.com
+                li
+                    b Facebook: 
+                    a(href="http://www.facebook.com/ranchocincoestrelas" target="_blank") facebook.com/ranchocincoestrelas
+                li
+                    b Twitter: 
+                    a(href="https://twitter.com/rancho5estrelas" target="_blank") twitter.com/rancho5estrelas
+                li
+                    b Google+: 
+                    a(href="https://plus.google.com/u/2/110935675921960066956/posts" target="_blank") plus.google.com/ranchocincoestrelas

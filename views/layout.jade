@@ -5,26 +5,40 @@ html
         meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="application-name" content="Website do Rancho Cinco Estrelas")
-        meta(name="application-url" content="http://www.ranchocincoestrelas.com.br")
+        meta(name="application-url" content="http://ranchocincoestrelas.com.br")
         meta(name="description" content="Pousada Rancho Cinco Estrelas")
         meta(name="keywords" content="pousada,rancho,igarape,hotel,fazenda,piscina,churrasco,sauna,festa")
         link(rel='stylesheet', media="screen", href='/css/screen.css')
         link(rel='stylesheet', media="screen", href='/css/style.css')
+        link(rel='stylesheet', media="screen", href='/css/tooltipster.css')
+        link(rel='stylesheet', media="screen", href='/css/themes/tooltipster-light.css')
+        link(rel='stylesheet', media="screen", href='/css/themes/tooltipster-noir.css')
+        link(rel='stylesheet', media="screen", href='/css/themes/tooltipster-punk.css')
+        link(rel='stylesheet', media="screen", href='/css/themes/tooltipster-shadow.css')
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
-        script(type="text/javascript" src="/js/jquery.balloon.js")
+        script(type="text/javascript" src="js/jquery.tooltipster.js")
         script.
             $(document).ready(function () {
+                $(':input', '#frm_contact')
+                .not(':button, :submit, :reset, :hidden')
+                .tooltipster({ trigger: 'custom', onlyOne: false, position: 'right', theme: 'tooltipster-error' });
+                $('#frm_contact :submit').tooltipster({ trigger: 'custom', offsetY:-10, offsetX:300, arrow: false, onlyOne: true, position: 'right', theme: 'tooltipster-success', content:'Mensagem enviada com sucesso!' });
+
                 $('#frm_contact').submit(function(event){
                     event.preventDefault();
                     $.post( "/message", $( "#frm_contact" ).serialize(), function(result){
                         if(result && result.error && result.error.errors){
                             var e = result.error.errors;
                             for(var f in e){
-                                $('#frm_contact input[name=' + f + ']').showBalloon({ position: 'bottom left', contents:e.name.message });
-                                $('#frm_contact input[name=' + f + ']').keydown(function(){
-                                    $('#frm_contact input[name=' + f + ']').hideBalloon();
+                                var field = $(':input[name=' + f + ']', '#frm_contact');
+                                field.tooltipster('update', e.name.message).tooltipster('show');
+                                field.keydown(function(){
+                                    field.tooltipster('hide');
                                 });
                             }
+                        } else {
+                            $('#frm_contact')[0].reset();
+                            $('#frm_contact :submit').tooltipster('show');
                         }
                     }, 'json');
                 });
@@ -33,7 +47,7 @@ html
 body
     div(id="header_wrapper")
         header(class="container")
-            a(href="/")
+            a(href="/") 
                 img(src="img/logo.png" class="span-3 first left"  alt="")
             nav(class="span-18 last right")
                 ul(class="right")
@@ -66,7 +80,7 @@ body
                 hr
                 div(class="one_tweet")
                     p Preço especial para maio.
-                    a(href="https://www.facebook.com/ranchocincoestrelas/posts/985649818169954") 10% de desconto
+                    a(href="https://www.facebook.com/ranchocincoestrelas/posts/985649818169954" target="_blank") 10% de desconto
                     div(class="date") 10 Maio 2016
 
             div(id="newsletter" class="span-6")
@@ -93,7 +107,7 @@ body
                 hr
                 form(id="frm_contact" action="#")
                     div(class="row")
-                        input(type="text" name="name" placeholder="Diga-nos seu nome" class="span-6 last")
+                        input(type="text" name="name" placeholder="diga-nos seu nome" class="span-6 last")
                     div(class="row")
                         input(type="text" name="email" placeholder="e o seu email para contato" class="span-6 last")
                     div(class="row")
@@ -102,6 +116,6 @@ body
                         input(type="submit" value="enviar" class="span-6")
             hr
             div(class="copyright_info")
-                span(class="left" style="width:500px;") <b>Endereço: <b/> Rua dos Tico-Ticos, 161 Vivendas Santa Mônica / Igarapé - MG <br/> Telefone: 234234234 <br/> Email: r5e.igarape@gmail.com
+                span(class="left" style="width:500px;") <b>Endereço: <b/> Rua dos Tico-Ticos, 161 Vivendas Santa Mônica / Igarapé - MG <br/> Telefone: (31) 98239-4079 <br/> Email: r5e.igarape@gmail.com
                 span(class="right last") Copyright 2016 by <b> Rancho Cinco Estrelas, all rights reserved <b/>
     block footer
